@@ -13,6 +13,9 @@ pipeline {
             }
             post {
                 success  {
+                    slackSend (message: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+                }
+                failure  {
                     emailext  (
                 to: "harshapattipati26@gmail.com",
                 subject: "Job was Successful: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
