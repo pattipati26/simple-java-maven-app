@@ -1,5 +1,5 @@
 properties([parameters([string(name: 'Bucket_Name', defaultValue: 'pattipati')])])
-properties([parameters([string(name: 'Bucket_Name2', defaultValue: 'pattipati1')])])
+properties([parameters([string(name: 'Bucket_Name1', defaultValue: 'pattipati1')])])
 pipeline {
     agent {
         docker {
@@ -59,7 +59,7 @@ pipeline {
         }
         stage('Store-in-S32') {
             steps {
-                sh "aws s3 cp /var/lib/jenkins/workspace/test/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Name2}/"
+                sh "aws s3 cp /var/lib/jenkins/workspace/test/target/my-app-1.0-SNAPSHOT.jar s3://${params.Bucket_Name1}/"
             }
         }
     }
