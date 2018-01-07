@@ -1,5 +1,5 @@
 properties([parameters([string(name: 'Bucket_Name', defaultValue: 'pattipati')])])
-properties([parameters([string(name: 'Bucket_Name1', defaultValue: 'pattipati')])])
+properties([parameters([string(name: 'Bucket_Name1', defaultValue: 'harsha')])])
 pipeline {
     agent {
         docker {
